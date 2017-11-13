@@ -22,20 +22,26 @@ public class XposedEntry implements IXposedHookLoadPackage {
 
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam lpparam) throws Throwable {
-        if (lpparam.packageName.equals("com.reizx.xtfr")){
-            RrxLog.d("xtfr start...");
-            XposedHelpers.findAndHookMethod(Toast.class.getName(), lpparam.classLoader, "makeText", Context.class, CharSequence.class, int.class, new XC_MethodHook() {
-                @Override
-                protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
-                    super.beforeHookedMethod(param);
-                    param.args[1] = "hook success";
-                }
-
-                @Override
-                protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                    super.afterHookedMethod(param);
-                }
-            });
+        IBasicEntry basicEntry = new EntryFactory().create(lpparam);
+        if (basicEntry != null){
+            basicEntry.execHook();
+            return;
         }
+        RrxLog.d(lpparam.packageName + " isn't effective package");
+//        if (lpparam.packageName.equals("com.reizx.xtfr")){
+//            RrxLog.d("xtfr start...");
+//            XposedHelpers.findAndHookMethod(Toast.class.getName(), lpparam.classLoader, "makeText", Context.class, CharSequence.class, int.class, new XC_MethodHook() {
+//                @Override
+//                protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
+//                    super.beforeHookedMethod(param);
+//                    param.args[1] = "hook success";
+//                }
+//
+//                @Override
+//                protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+//                    super.afterHookedMethod(param);
+//                }
+//            });
+//        }
     }
 }

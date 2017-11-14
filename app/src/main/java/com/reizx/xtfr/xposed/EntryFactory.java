@@ -1,6 +1,6 @@
 package com.reizx.xtfr.xposed;
 
-import com.reizx.xtfr.util.RrxLog;
+import com.reizx.xtfr.util.KxLog;
 import com.reizx.xtfr.xposed.oppo.OppoEntry;
 
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
@@ -14,7 +14,7 @@ public class EntryFactory {
         IBasicEntry basicEntry = null;
         switch (lpparam.packageName){
             case "com.oppo.market"://oppo市场
-                RrxLog.d("Creaet oppo entry");
+                KxLog.d("Creaet oppo entry");
                 basicEntry = new OppoEntry(lpparam);
                 break;
             default:

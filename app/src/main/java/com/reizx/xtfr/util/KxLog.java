@@ -7,7 +7,7 @@ import android.util.Log;
  * 对于XLOG的进一层封装
  * Created by Kigkrazy on 2017/6/11.
  */
-public class RrxLog {
+public class KxLog {
     //public static LoggerPrinter loggerPrinter = new LoggerPrinter();
     private static String attachTag = ""; //附加标签
     private static String logTag = "xcore" ;//日志标签
@@ -54,6 +54,6 @@ public class RrxLog {
     }
 
     public static void setLogTag(String logTag) {
-        RrxLog.logTag = logTag;
+        KxLog.logTag = logTag;
     }
 }

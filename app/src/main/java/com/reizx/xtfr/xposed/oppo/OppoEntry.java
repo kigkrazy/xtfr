@@ -1,6 +1,6 @@
 package com.reizx.xtfr.xposed.oppo;
 
-import com.reizx.xtfr.util.RrxLog;
+import com.reizx.xtfr.util.KxLog;
 import com.reizx.xtfr.xposed.IBasicEntry;
 
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
@@ -18,6 +18,7 @@ public class OppoEntry implements IBasicEntry {
 
     @Override
     public void execHook() {
-        RrxLog.d("OppoEntry execHook entry...");
+        KxLog.d("OppoEntry execHook entry...");
+
     }
 }

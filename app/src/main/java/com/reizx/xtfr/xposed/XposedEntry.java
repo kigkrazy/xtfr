@@ -1,13 +1,8 @@
 package com.reizx.xtfr.xposed;
 
-import android.content.Context;
-import android.widget.Toast;
-
-import com.reizx.xtfr.util.RrxLog;
+import com.reizx.xtfr.util.KxLog;
 
 import de.robv.android.xposed.IXposedHookLoadPackage;
-import de.robv.android.xposed.XC_MethodHook;
-import de.robv.android.xposed.XposedHelpers;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
 /**
@@ -17,7 +12,7 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
 public class XposedEntry implements IXposedHookLoadPackage {
     static {
-        RrxLog.setLogTag("xtfr");
+        KxLog.setLogTag("xtfr");
     }
 
     @Override
@@ -27,9 +22,9 @@ public class XposedEntry implements IXposedHookLoadPackage {
             basicEntry.execHook();
             return;
         }
-        RrxLog.d(lpparam.packageName + " isn't effective package");
+        KxLog.d(lpparam.packageName + " isn't effective package");
 //        if (lpparam.packageName.equals("com.reizx.xtfr")){
-//            RrxLog.d("xtfr start...");
+//            KxLog.d("xtfr start...");
 //            XposedHelpers.findAndHookMethod(Toast.class.getName(), lpparam.classLoader, "makeText", Context.class, CharSequence.class, int.class, new XC_MethodHook() {
 //                @Override
 //                protected void beforeHookedMethod(MethodHookParam param) throws Throwable {

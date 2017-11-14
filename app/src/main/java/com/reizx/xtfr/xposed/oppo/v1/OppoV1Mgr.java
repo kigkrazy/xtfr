@@ -2,7 +2,15 @@ package com.reizx.xtfr.xposed.oppo.v1;
 
 import com.reizx.xtfr.util.KxLog;
 import com.reizx.xtfr.xposed.oppo.IOppoMgr;
+import com.reizx.xtfr.xposed.oppo.xclazz.a_a_a_wm_url_manager;
+import com.reizx.xtfr.xposed.oppo.xclazz.com_oppo_statistics_util_LogUtil;
+import com.reizx.xtfr.xposed.oppo.xclazz.inf.IXClazzMgr;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import de.robv.android.xposed.XC_MethodHook;
+import de.robv.android.xposed.XposedHelpers;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
 /**
@@ -10,7 +18,8 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage;
  */
 
 public class OppoV1Mgr implements IOppoMgr {
-    XC_LoadPackage.LoadPackageParam lpparam;
+    private XC_LoadPackage.LoadPackageParam lpparam;
+    private List<IXClazzMgr> clazzMgrs = new ArrayList<IXClazzMgr>();
 
     public OppoV1Mgr(XC_LoadPackage.LoadPackageParam lpparam) {
         this.lpparam = lpparam;
@@ -19,5 +28,14 @@ public class OppoV1Mgr implements IOppoMgr {
     @Override
     public void startService() {
         KxLog.d("OppoV1Mgr start service");
+        clazzMgrs.add(new com_oppo_statistics_util_LogUtil());
+        clazzMgrs.add(new a_a_a_wm_url_manager());
+        startAll();
+    }
+
+    public void startAll(){
+        for (IXClazzMgr clazzMgr : clazzMgrs){
+            clazzMgr.exec(lpparam);
+        }
     }
 }

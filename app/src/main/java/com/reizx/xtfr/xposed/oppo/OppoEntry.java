@@ -18,7 +18,9 @@ public class OppoEntry implements IBasicEntry {
 
     @Override
     public void execHook() {
+        KxLog.addTag("oppo-tag");//添加OPPO相关的LOG标签
         KxLog.d("OppoEntry execHook entry...");
-
+        OppoMgrFactory.craete(lpparam).startService();
     }
+
 }

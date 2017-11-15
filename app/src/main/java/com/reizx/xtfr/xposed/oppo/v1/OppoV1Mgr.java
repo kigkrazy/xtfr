@@ -6,6 +6,7 @@ import com.reizx.xtfr.xposed.oppo.xclazz.a_a_a_wm_url_manager;
 import com.reizx.xtfr.xposed.oppo.xclazz.com_oppo_statistics_util_LogUtil;
 import com.reizx.xtfr.xposed.oppo.xclazz.inf.IXClazzMgr;
 import com.reizx.xtfr.xposed.oppo.xclazz.okhttp3_HttpUrl;
+import com.reizx.xtfr.xposed.oppo.xclazz.okhttp3_v;
 import com.reizx.xtfr.xposed.oppo.xclazz.okhttp3_y;
 
 import java.util.ArrayList;
@@ -31,9 +32,10 @@ public class OppoV1Mgr implements IOppoMgr {
     public void startService() {
         KxLog.d("OppoV1Mgr start service");
         clazzMgrs.add(new com_oppo_statistics_util_LogUtil());
-        clazzMgrs.add(new a_a_a_wm_url_manager());
-        clazzMgrs.add(new okhttp3_HttpUrl());
-        clazzMgrs.add(new okhttp3_y());
+        //clazzMgrs.add(new a_a_a_wm_url_manager());
+        //clazzMgrs.add(new okhttp3_HttpUrl());
+        //clazzMgrs.add(new okhttp3_y());
+        clazzMgrs.add(new okhttp3_v());
         startAll();
     }
 

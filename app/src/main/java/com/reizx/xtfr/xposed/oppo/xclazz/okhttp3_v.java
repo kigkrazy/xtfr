@@ -29,6 +29,8 @@ public class okhttp3_v implements IXClazzMgr{
                         KxLog.d("okhttp3.v==>okhttp3.RealCall Constructor before in");
                         Object request = param.args[1];
                         String requestToString = (String) Reflect.on(request).call("toString").get();
+                        String headerString = (String) Reflect.on(request).field("c").call("toString").get();
+                        KxLog.d("headerString : " + headerString);
                         KxLog.d("requestToString : " + requestToString);
                     }
 
@@ -38,7 +40,7 @@ public class okhttp3_v implements IXClazzMgr{
                     }
                 });
 
-        //okhttp3.v::a() ===> 相当与 okhttp3.RealCall::execute()
+        // okhttp3.v::a() ===> 相当与 okhttp3.RealCall::execute()
         XposedHelpers.findAndHookMethod("okhttp3.v", lpparam.classLoader, "a", new XC_MethodHook() {
             @Override
             protected void beforeHookedMethod(MethodHookParam param) throws Throwable {

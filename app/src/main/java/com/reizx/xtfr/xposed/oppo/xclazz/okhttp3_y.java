@@ -1,6 +1,11 @@
 package com.reizx.xtfr.xposed.oppo.xclazz;
 
+import com.reizx.xtfr.util.KxLog;
 import com.reizx.xtfr.xposed.oppo.xclazz.inf.IXClazzMgr;
+
+import org.joor.Reflect;
+
+import java.io.InputStream;
 
 import de.robv.android.xposed.XC_MethodHook;
 import de.robv.android.xposed.XposedHelpers;
@@ -22,12 +27,29 @@ public class okhttp3_y implements IXClazzMgr {
             @Override
             protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
                 super.beforeHookedMethod(param);
+                KxLog.d("okhttp3.y.e before in");
             }
 
             @Override
             protected void afterHookedMethod(MethodHookParam param) throws Throwable {
                 super.afterHookedMethod(param);
+                KxLog.d("okhttp3.y.e after in");
+                InputStream ins = Reflect.on(param.getResult()).call("b").get();
+                //KxLog.d("okhttp3.y.e after body content : " + inputStream2String(ins));
             }
         });
+    }
+
+    public String inputStream2String(InputStream inputStream){
+        try {
+            StringBuffer   out   =   new   StringBuffer();
+            byte[]   b   =   new   byte[4096];
+            for   (int   n;   (n   =   inputStream.read(b))   !=   -1;)   {
+                out.append(new   String(b,   0,   n));
+            }
+            return   out.toString();
+        }catch (Exception e){
+            return null;
+        }
     }
 }

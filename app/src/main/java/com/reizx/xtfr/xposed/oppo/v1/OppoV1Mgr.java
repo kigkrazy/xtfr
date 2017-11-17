@@ -3,11 +3,14 @@ package com.reizx.xtfr.xposed.oppo.v1;
 import com.reizx.xtfr.util.KxLog;
 import com.reizx.xtfr.xposed.oppo.IOppoMgr;
 import com.reizx.xtfr.xposed.oppo.xclazz.a_a_a_wm_url_manager;
+import com.reizx.xtfr.xposed.oppo.xclazz.com_nearme_splash_b;
 import com.reizx.xtfr.xposed.oppo.xclazz.com_oppo_statistics_util_LogUtil;
 import com.reizx.xtfr.xposed.oppo.xclazz.inf.IXClazzMgr;
 import com.reizx.xtfr.xposed.oppo.xclazz.okhttp3_HttpUrl;
 import com.reizx.xtfr.xposed.oppo.xclazz.okhttp3_v;
 import com.reizx.xtfr.xposed.oppo.xclazz.okhttp3_y;
+import com.reizx.xtfr.xposed.oppo.xclazz.okio_c;
+import com.reizx.xtfr.xposed.oppo.xclazz.okio_k;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,8 +37,11 @@ public class OppoV1Mgr implements IOppoMgr {
         clazzMgrs.add(new com_oppo_statistics_util_LogUtil());
         //clazzMgrs.add(new a_a_a_wm_url_manager());
         //clazzMgrs.add(new okhttp3_HttpUrl());
-        //clazzMgrs.add(new okhttp3_y());
+        clazzMgrs.add(new okhttp3_y());
         clazzMgrs.add(new okhttp3_v());
+        clazzMgrs.add(new okio_c());
+        clazzMgrs.add(new okio_k());
+        clazzMgrs.add(new com_nearme_splash_b());
         startAll();
     }
 

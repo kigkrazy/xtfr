@@ -1,7 +1,7 @@
 package com.reizx.xtfr.xposed.oppo;
 
 import com.reizx.xtfr.util.KxLog;
-import com.reizx.xtfr.xposed.IBasicEntry;
+import com.reizx.xtfr.xposed.inf.IBasicEntry;
 
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 

@@ -1,6 +1,7 @@
 package com.reizx.xtfr.xposed;
 
 import com.reizx.xtfr.util.KxLog;
+import com.reizx.xtfr.xposed.inf.IBasicEntry;
 
 import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;

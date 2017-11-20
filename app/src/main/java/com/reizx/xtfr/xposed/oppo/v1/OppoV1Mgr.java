@@ -5,7 +5,7 @@ import com.reizx.xtfr.xposed.oppo.IOppoMgr;
 import com.reizx.xtfr.xposed.oppo.xclazz.com_nearme_network_proto_a;
 import com.reizx.xtfr.xposed.oppo.xclazz.com_nearme_splash_b;
 import com.reizx.xtfr.xposed.oppo.xclazz.com_oppo_statistics_util_LogUtil;
-import com.reizx.xtfr.xposed.IXClazzMgr;
+import com.reizx.xtfr.xposed.inf.IXClazzMgr;
 import com.reizx.xtfr.xposed.oppo.xclazz.okhttp3_v;
 import com.reizx.xtfr.xposed.oppo.xclazz.okhttp3_y;
 import com.reizx.xtfr.xposed.oppo.xclazz.okio_c;

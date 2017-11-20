@@ -1,6 +1,6 @@
 package com.reizx.xtfr.xposed.oppo.xclazz;
 
-import com.reizx.xtfr.xposed.IXClazzMgr;
+import com.reizx.xtfr.xposed.inf.IXClazzMgr;
 
 import de.robv.android.xposed.XposedHelpers;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;

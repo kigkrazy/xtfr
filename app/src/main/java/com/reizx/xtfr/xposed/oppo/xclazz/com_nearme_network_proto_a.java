@@ -2,7 +2,7 @@ package com.reizx.xtfr.xposed.oppo.xclazz;
 
 import com.reizx.xtfr.util.GsonUtils;
 import com.reizx.xtfr.util.KxLog;
-import com.reizx.xtfr.xposed.IXClazzMgr;
+import com.reizx.xtfr.xposed.inf.IXClazzMgr;
 
 import de.robv.android.xposed.XC_MethodHook;
 import de.robv.android.xposed.XposedHelpers;

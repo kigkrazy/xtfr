@@ -1,4 +1,4 @@
-package com.reizx.xtfr.xposed;
+package com.reizx.xtfr.xposed.inf;
 
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 

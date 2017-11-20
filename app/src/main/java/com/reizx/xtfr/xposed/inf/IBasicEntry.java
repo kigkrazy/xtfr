@@ -1,4 +1,4 @@
-package com.reizx.xtfr.xposed;
+package com.reizx.xtfr.xposed.inf;
 
 /**
  * 入口类接口

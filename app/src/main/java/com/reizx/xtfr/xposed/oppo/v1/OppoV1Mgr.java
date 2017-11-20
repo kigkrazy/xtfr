@@ -3,6 +3,7 @@ package com.reizx.xtfr.xposed.oppo.v1;
 import com.reizx.xtfr.util.KxLog;
 import com.reizx.xtfr.xposed.oppo.IOppoMgr;
 import com.reizx.xtfr.xposed.oppo.xclazz.a_a_a_wm_url_manager;
+import com.reizx.xtfr.xposed.oppo.xclazz.com_nearme_network_proto_a;
 import com.reizx.xtfr.xposed.oppo.xclazz.com_nearme_splash_b;
 import com.reizx.xtfr.xposed.oppo.xclazz.com_oppo_statistics_util_LogUtil;
 import com.reizx.xtfr.xposed.oppo.xclazz.inf.IXClazzMgr;
@@ -42,6 +43,7 @@ public class OppoV1Mgr implements IOppoMgr {
         clazzMgrs.add(new okio_c());
         clazzMgrs.add(new okio_k());
         clazzMgrs.add(new com_nearme_splash_b());
+        clazzMgrs.add(new com_nearme_network_proto_a());
         startAll();
     }
 

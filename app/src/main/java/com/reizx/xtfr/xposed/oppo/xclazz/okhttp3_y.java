@@ -27,14 +27,14 @@ public class okhttp3_y implements IXClazzMgr {
             @Override
             protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
                 super.beforeHookedMethod(param);
-                KxLog.d("okhttp3.y.e before in");
+                //KxLog.d("okhttp3.y.e before in");
             }
 
             @Override
             protected void afterHookedMethod(MethodHookParam param) throws Throwable {
                 super.afterHookedMethod(param);
-                KxLog.d("okhttp3.y.e after in");
-                InputStream ins = Reflect.on(param.getResult()).call("b").get();
+                //KxLog.d("okhttp3.y.e after in");
+                //InputStream ins = Reflect.on(param.getResult()).call("b").get();
                 //KxLog.d("okhttp3.y.e after body content : " + inputStream2String(ins));
             }
         });

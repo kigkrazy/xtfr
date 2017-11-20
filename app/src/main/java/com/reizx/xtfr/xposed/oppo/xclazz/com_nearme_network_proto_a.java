@@ -28,8 +28,6 @@ public class com_nearme_network_proto_a implements IXClazzMgr {
                 KxLog.d("com.nearme.network.proto::a__RequestBodyImpl in ... ");
                 Object requestBody = param.args[0];
                 KxLog.d("com.nearme.network.proto::a__RequestBodyImpl requestBody : " + GsonUtils.toJsonString(requestBody));
-
-
             }
 
             @Override

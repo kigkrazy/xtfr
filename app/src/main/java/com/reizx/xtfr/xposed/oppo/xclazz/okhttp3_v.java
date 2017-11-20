@@ -26,7 +26,7 @@ public class okhttp3_v implements IXClazzMgr{
                     @Override
                     protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
                         super.beforeHookedMethod(param);
-                        KxLog.d("okhttp3.v==>okhttp3.RealCall Constructor before in");
+                        //KxLog.d("okhttp3.v==>okhttp3.RealCall Constructor before in");
                         Object request = param.args[1];
                         String requestToString = (String) Reflect.on(request).call("toString").get();
                         String headerString = (String) Reflect.on(request).field("c").call("toString").get();

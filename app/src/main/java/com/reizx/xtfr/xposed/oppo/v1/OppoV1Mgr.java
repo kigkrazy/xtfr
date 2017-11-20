@@ -31,15 +31,15 @@ public class OppoV1Mgr implements IOppoMgr {
     @Override
     public void startService() {
         KxLog.d("OppoV1Mgr start service");
-        clazzMgrs.add(new com_oppo_statistics_util_LogUtil());
+        clazzMgrs.add(new com_oppo_statistics_util_LogUtil());//Log打印类
         //clazzMgrs.add(new a_a_a_wm_url_manager());
         //clazzMgrs.add(new okhttp3_HttpUrl());
-        clazzMgrs.add(new okhttp3_y());
-        clazzMgrs.add(new okhttp3_v());
-        clazzMgrs.add(new okio_c());
-        clazzMgrs.add(new okio_k());
-        clazzMgrs.add(new com_nearme_splash_b());
-        clazzMgrs.add(new com_nearme_network_proto_a());
+        clazzMgrs.add(new okhttp3_y());//okhttp3h.Response
+        clazzMgrs.add(new okhttp3_v());//Okhttp3的Request类
+        //clazzMgrs.add(new okio_c());//RequestBody
+        clazzMgrs.add(new okio_k());//OKhttp3的请求Body
+        clazzMgrs.add(new com_nearme_splash_b());//初步判断是网络库的log，和调试的总的环境变量
+        clazzMgrs.add(new com_nearme_network_proto_a());//a__RequestBodyImpl
         startAll();
     }
 

@@ -1,6 +1,6 @@
 package com.reizx.xtfr.xposed.oppo.xclazz;
 
-import com.reizx.xtfr.xposed.oppo.xclazz.inf.IXClazzMgr;
+import com.reizx.xtfr.xposed.IXClazzMgr;
 
 import de.robv.android.xposed.XC_MethodHook;
 import de.robv.android.xposed.XposedHelpers;

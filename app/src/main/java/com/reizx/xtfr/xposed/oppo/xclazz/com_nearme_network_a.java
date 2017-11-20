@@ -6,13 +6,14 @@ import de.robv.android.xposed.XposedHelpers;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
 /**
- * 初步判断是网络库的log，和调试的总的环境变量
- * Created by kig on 2017/11/16.
+ * 网络请求引擎
+ * com.nearme.network.a ==> com.nearme.network.a__BaseHttpEngine
+ * Created by kig on 2017/11/20.
  */
 
-public class com_nearme_splash_b implements IXClazzMgr{
+public class com_nearme_network_a implements IXClazzMgr{
     @Override
     public void exec(XC_LoadPackage.LoadPackageParam lpparam) {
-        XposedHelpers.setStaticBooleanField(XposedHelpers.findClass("com.nearme.splash.b", lpparam.classLoader), "a", true);
+        //XposedHelpers.findAndHookMethod("com.nearme.network.a", lpparam.classLoader, "")
     }
 }

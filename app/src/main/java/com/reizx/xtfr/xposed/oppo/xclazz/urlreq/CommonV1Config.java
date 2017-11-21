@@ -30,7 +30,6 @@ public class CommonV1Config implements IXClazzMgr {
             @Override
             protected void afterHookedMethod(MethodHookParam param) throws Throwable {
                 super.afterHookedMethod(param);
-                //KxLog.d("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
                 try{
                     Object objectReq = Reflect.on("a.a.a.lm", lpparam.classLoader).create(param.args[0], Reflect.on(param.thisObject).get("d")).get();
                     String url = Reflect.on(objectReq).call("generateRequestBody").get();

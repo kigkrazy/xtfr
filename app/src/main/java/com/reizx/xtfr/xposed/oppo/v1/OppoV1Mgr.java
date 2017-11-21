@@ -16,6 +16,7 @@ import com.reizx.xtfr.xposed.oppo.xclazz.okhttp3_y;
 import com.reizx.xtfr.xposed.oppo.xclazz.okio_c;
 import com.reizx.xtfr.xposed.oppo.xclazz.okio_k;
 import com.reizx.xtfr.xposed.oppo.xclazz.urlreq.CommonV1Config;
+import com.reizx.xtfr.xposed.oppo.xclazz.urlreq.WhoopsV1Upgrade;
 import com.reizx.xtfr.xposed.oppo.xclazz.urlreq.a_a_a_vi__CardStoreMgr;
 
 import java.util.ArrayList;
@@ -57,6 +58,7 @@ public class OppoV1Mgr implements IOppoMgr {
         //region 连接请求对象全部
         clazzMgrs.add(new a_a_a_vi__CardStoreMgr());//https://istore.oppomobile.com/card/store/v1/struct 连接请求对象
         clazzMgrs.add(new CommonV1Config());//https://istore.oppomobile.com/common/v1/config?imei=354782061824384&model=SM-N9108V&osVersion=19&romVersion=0 连接请求对象
+        clazzMgrs.add(new WhoopsV1Upgrade());//https://api.cdo.oppomobile.com/whoops/v1/upgrade的请求
 
         //endregion
         startAll();

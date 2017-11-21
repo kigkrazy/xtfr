@@ -12,12 +12,14 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage;
  */
 
 public class XposedEntry implements IXposedHookLoadPackage {
+    public static XC_LoadPackage.LoadPackageParam lpparam;
     static {
         KxLog.setLogTag("xtfr");
     }
 
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam lpparam) throws Throwable {
+        XposedEntry.lpparam = lpparam;
         IBasicEntry basicEntry = new EntryFactory().create(lpparam);
         if (basicEntry != null){
             basicEntry.execHook();

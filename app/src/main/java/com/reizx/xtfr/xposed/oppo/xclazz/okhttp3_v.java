@@ -30,8 +30,8 @@ public class okhttp3_v implements IXClazzMgr{
                         Object request = param.args[1];
                         String requestToString = (String) Reflect.on(request).call("toString").get();
                         String headerString = (String) Reflect.on(request).field("c").call("toString").get();
-                        KxLog.d("headerString : " + headerString);
-                        KxLog.d("requestToString : " + requestToString);
+                        KxLog.d("realcall headerString : " + headerString);
+                        KxLog.d("realcall requestToString : " + requestToString);
                     }
 
                     @Override

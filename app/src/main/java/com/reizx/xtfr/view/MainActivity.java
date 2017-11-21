@@ -4,6 +4,7 @@ import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
 //    Button btnToastShow;
     @BindView(R.id.txt_info)
     TextView txtInfo;
+    @BindView(R.id.edt_sysprop)
+    EditText edtSysProp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,12 @@ public class MainActivity extends AppCompatActivity {
          */
         String romName = Reflect.on("android.os.SystemProperties").call("get","ro.build.display.id", "").get();
         txtInfo.append(romName);
+    }
 
+    @OnClick(R.id.btn_get_sysprop)
+    public void getSysProp(){
+        edtSysProp.setText("NEARME_LOG_PATH_ANDROID");
+        String propValue = System.getProperty(edtSysProp.getText().toString(), "");
+        txtInfo.append(propValue);
     }
 }
